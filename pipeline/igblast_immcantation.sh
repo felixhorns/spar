@@ -1,3 +1,8 @@
+#!/bin/bash
+
+# Run igblast
+# Uses Singularity image of immcantation
+
 WDIR=$1  # working directory containing all_contig.fasta
 RESOURCES=$2  # resources directory containing immcantation singularity image
 

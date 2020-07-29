@@ -1,3 +1,5 @@
+# Core algorithms for SPAR primer design
+
 import time
 import json
 import numpy as np

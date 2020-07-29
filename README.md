@@ -14,21 +14,22 @@ Publication pending.
 
 A complete Python 2.7 environment is specified by the YAML file in the repository, which can be used to create an environment using Anaconda. Key dependencies are `pandas`, `primer3`, and `pysam`.
 
-Immcantation 2.6.0 is required to run igblast and can be installed using Docker or Singularity using the instructions [here](https://immcantation.readthedocs.io/en/version-2.4.0/docker/intro.html). Installation of igblast is greatly simplified by using containerization such as Docker or Singularity. The pipeline is currently configured to use Singularity, and the Singularity image for immcantation must be at `resources/immcantation-2.6.0.simg`.
+Immcantation 2.6.0 is required to run igblast and can be installed using Docker or Singularity using the instructions [here](https://immcantation.readthedocs.io/en/version-2.4.0/docker/intro.html). Containerization such as Docker or Singularity greatly simplifies installation of igblast and is highly recommended. The pipeline is currently configured to use Singularity. Singularity image for immcantation must be located at `resources/immcantation-2.6.0.simg`.
 
 ## Running the SPAR primer design pipeline
 
 The wrapper script that runs the pipeline is `run_spar.sh`.
 
-The inputs are:
-- Path to the working directory, which must contain `all_contig_annotations.csv`, `all_contig_annotations.json`, `all_contig.fasta`, and `all_contig.bam`. This is typically the output directory of 10X Genomics cellranger (e.g. `/path/to/cellranger/sample/outs`).
+Inputs:
+- Path to the working directory. This must contain `all_contig_annotations.csv`, `all_contig_annotations.json`, `all_contig.fasta`, and `all_contig.bam`. This is typically the output directory of 10X Genomics cellranger (e.g. `/path/to/cellranger/sample/outs`).
 - Sample name. This is used as a unique identifier for each library or sample. Typically, this is used to distinguish different 10X libraries.
-- Path to the output directory. This is where the file indicating SPAR primers, called `cell_contigs_primers.csv`, will be written.
+- Path to the output directory. This is where the file indicating SPAR primers will be written.
 
-The output is a table, called `cell_contigs_primers.csv`, listing the optimal primers to retrieve the variable region of each contig.
+Output is a table, called `cell_contigs_primers.csv`, listing the optimal primers to retrieve the variable region of each contig.
 
 Example of running SPAR pipeline:
-`source run_spar.sh /path/to/cellranger/sample/outs my_sample_name /path/to/spar/output`
+
+`./run_spar.sh /path/to/cellranger/sample/outs my_sample_name /path/to/spar/output`
 
 ## Contents
 
