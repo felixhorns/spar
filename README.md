@@ -14,7 +14,7 @@ Publication pending.
 
 A complete Python 2.7 environment is specified by the YAML file in the repository, which can be used to create an environment using Anaconda. Key dependencies are `pandas`, `primer3`, and `pysam`.
 
-Immcantation 2.6.0 is required to run igblast and can be installed using Docker or Singularity using the instructions [here](https://immcantation.readthedocs.io/en/version-2.4.0/docker/intro.html). Containerization such as Docker or Singularity greatly simplifies installation of igblast and is highly recommended. The pipeline is currently configured to use Singularity. Singularity image for immcantation must be located at `resources/immcantation-2.6.0.simg`.
+Immcantation 2.6.0 is required to run igblast and can be installed using Docker or Singularity using the instructions [here](https://immcantation.readthedocs.io/en/version-2.4.0/docker/intro.html). Containerization such as Docker or Singularity simplifies installation of igblast and is recommended. The pipeline is currently configured to use Singularity. Singularity image for immcantation must be located at `resources/immcantation-2.6.0.simg`.
 
 ## Running the SPAR primer design pipeline
 
