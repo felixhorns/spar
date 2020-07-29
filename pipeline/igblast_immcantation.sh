@@ -1,6 +1,7 @@
-IMG="resources/immcantation-2.6.0.simg" # path to immcantation singularity image
+WDIR=$1  # working directory containing all_contig.fasta
+RESOURCES=$2  # resources directory containing immcantation singularity image
 
-WDIR=$1 # working directory containing all_contig.fasta
+IMG=$RESOURCES/immcantation-2.6.0.simg  # path to immcantation singularity image
 
 # results will be output into the working directory
 

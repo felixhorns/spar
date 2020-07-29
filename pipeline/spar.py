@@ -57,8 +57,9 @@ def _design_primers_contigs_pcr1(contig_ids, contigs_seqs, contig_umis, cell_con
     contigs_seqs = contigs_seqs.loc[contigs_seqs["C_REGION_contig_match_start"] != "None"]
     contig_ids = contigs_seqs.index # Update contig ids to remove dropped contigs
 
-    print "Contigs with no C region match:", len(contig_ids_no_C_region_match)
-    print "Remaining contigs (after dropping those with no C region match):", len(contig_ids)
+    if verbose:
+        print "Contigs with no C region match:", len(contig_ids_no_C_region_match)
+        print "Remaining contigs (after dropping those with no C region match):", len(contig_ids)
     
     ### Prepare dictionaries for looking up sequences and sequence features
 
@@ -118,7 +119,8 @@ def _design_primers_contigs_pcr1(contig_ids, contigs_seqs, contig_umis, cell_con
             else:
                 res[key] = [value]
 
-    print "Contigs with no primer pair found:", len(contig_ids_no_primer_found)
+    if verbose:
+        print "Contigs with no primer pair found:", len(contig_ids_no_primer_found)
                 
     # Format as dataframe
     res = pd.DataFrame(res, index=index)
@@ -441,7 +443,8 @@ def _design_primers_contigs_pcr2(cell_contigs_primers, contigs_igblast, column_c
             else:
                 res[key] = [value]
 
-    print "Contigs with no primer pair found:", len(contig_ids_no_primer_found)
+    if verbose:
+        print "Contigs with no primer pair found:", len(contig_ids_no_primer_found)
                 
     # Format as dataframe
     res = pd.DataFrame(res, index=index)
